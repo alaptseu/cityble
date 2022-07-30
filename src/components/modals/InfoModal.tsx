@@ -54,7 +54,7 @@ export const InfoModal = ({ isOpen, handleClose }: Props) => {
         <Cell value="A" />
       </div>
       <p className="text-sm text-gray-500 dark:text-gray-300">
-        The letter U is not in the city name in any spot.
+        The letter K is not in the city name in any spot.
       </p>
     </BaseModal>
   )
