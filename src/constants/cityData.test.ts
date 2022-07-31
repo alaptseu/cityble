@@ -16,7 +16,7 @@ describe('cityData', () => {
         // console.log(citiesByPopulation(300000, 5));
         const array = citiesByLength(5);
 
-        console.log(array![0]);
+        console.log(array.length);
         // console.log(array);
 
 

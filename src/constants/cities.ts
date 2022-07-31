@@ -11,7 +11,7 @@ export function citiesByLength(nameLength: number) {
 }
 
 export function filterByLength(min: number) {
-    const filteredCities = cityData.map(c => c.toLocaleLowerCase())
+    const filteredCities = cityData.map(c => c.toLocaleLowerCase().replace(/\s/g, ''))
         .filter((element) => element.length > 3);
 
     const cityMap = new Map<number, Set<string>>();
