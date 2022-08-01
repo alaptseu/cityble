@@ -52,7 +52,7 @@ export const SettingsModal = ({
           description={HIGH_CONTRAST_MODE_DESCRIPTION}
         />
         <SettingsToggle
-          settingName="Show coutry name"
+          settingName="Show country name"
           flag={isCountryName}
           handleFlag={handleCountryName}
           description={SHOW_COUNTRY}
