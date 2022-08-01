@@ -1,7 +1,7 @@
 import { WRONG_SPOT_MESSAGE, NOT_CONTAINED_MESSAGE } from '../constants/strings'
 import { getGuessStatuses } from './statuses'
 import { default as GraphemeSplitter } from 'grapheme-splitter'
-import { citiesByDay, citiesByDayV2, countryByCity } from '../constants/cities'
+import { citiesByDayV2, countryByCity } from '../constants/cities'
 
 // 1 January 2022 Game Epoch
 export const firstGameDate = new Date(2022, 0)
