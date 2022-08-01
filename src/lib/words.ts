@@ -1,21 +1,20 @@
 import { WRONG_SPOT_MESSAGE, NOT_CONTAINED_MESSAGE } from '../constants/strings'
 import { getGuessStatuses } from './statuses'
 import { default as GraphemeSplitter } from 'grapheme-splitter'
-import { citiesByLength } from '../constants/cities'
+import { citiesByDay, citiesByDayV2, countryByCity } from '../constants/cities'
 
 // 1 January 2022 Game Epoch
 export const firstGameDate = new Date(2022, 0)
 export const periodInDays = 1
-export const CITIES = citiesByLength(5)
+// export const CITIES = citiesByLength(5)
+export const CITIES = citiesByDayV2(new Date())
 
 export const isWordInWordList = (word: string) => {
   const toSearch = localeAwareLowerCase(word);
-  console.log(toSearch);
-  console.log(CITIES);
+  // console.log(toSearch);
+  // console.log(CITIES);
   return (
     CITIES.includes(toSearch)
-    // WORDS.includes(localeAwareLowerCase(word)) ||
-    // VALID_GUESSES.includes(localeAwareLowerCase(word))
   )
 }
 
@@ -121,18 +120,19 @@ export const getWordOfDay = (index: number) => {
     throw new Error('Invalid index')
   }
   return localeAwareUpperCase(CITIES![index % CITIES!.length])
-  // return localeAwareUpperCase(WORDS[index % WORDS.length]) 
 }
 
 export const getSolution = (today: Date) => {
   const nextGameDate = getNextGameDate(today)
   const index = getIndex(today)
   const wordOfTheDay = getWordOfDay(index)
+  const country = countryByCity(wordOfTheDay)
   return {
     solution: wordOfTheDay,
     solutionIndex: index,
     tomorrow: nextGameDate.valueOf(),
+    country: country,
   }
 }
 
-export const { solution, solutionIndex, tomorrow } = getSolution(getToday())
+export const { solution, solutionIndex, tomorrow, country } = getSolution(getToday())

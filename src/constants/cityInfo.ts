@@ -11,3 +11,8 @@ export interface CityInfo {
     city: string;
     population: number | null;
   }
+
+  export interface CityCoutry {
+    city: string;
+    country: string;
+  }

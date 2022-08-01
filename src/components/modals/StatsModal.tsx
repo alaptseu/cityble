@@ -14,6 +14,7 @@ import {
 } from '../../constants/strings'
 import { MigrationIntro } from '../stats/MigrationIntro'
 import { ENABLE_MIGRATE_STATS } from '../../constants/settings'
+import { Twemoji } from '@teuteuf/react-emoji-render';
 
 type Props = {
   isOpen: boolean
@@ -86,6 +87,17 @@ export const StatsModal = ({
             />
           </div>
           <div>
+            <a
+              className="underline text-center block mt-4 whitespace-nowrap"
+              href={`https://en.wikipedia.org/wiki/${solution.toLowerCase()}`}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Twemoji
+                text={"📚 on Wikipedia"}
+                options={{ className: "inline-block" }}
+              />
+            </a>
             <button
               type="button"
               className="inline-flex justify-center items-center text-center mt-2 w-full rounded-md border border-transparent shadow-sm px-4 py-2 bg-indigo-600 text-base font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 sm:text-sm"

@@ -12,6 +12,7 @@ import {
   CORRECT_WORD_MESSAGE,
   HARD_MODE_ALERT_MESSAGE,
   DISCOURAGE_INAPP_BROWSER_TEXT,
+  COUNTRY_NAME_SHOW_ALERT_MESSAGE,
 } from './constants/strings'
 import {
   MAX_CHALLENGES,
@@ -25,6 +26,7 @@ import {
   solution,
   findFirstUnusedReveal,
   unicodeLength,
+  country,
 } from './lib/words'
 import { addStatsForCompletedGame, loadStats } from './lib/stats'
 import {
@@ -57,6 +59,11 @@ function App() {
   const [isStatsModalOpen, setIsStatsModalOpen] = useState(false)
   const [isMigrateStatsModalOpen, setIsMigrateStatsModalOpen] = useState(false)
   const [isSettingsModalOpen, setIsSettingsModalOpen] = useState(false)
+  const [isCountryName, setIsCountryName] = useState(
+    localStorage.getItem('coutryNameShow')
+      ? localStorage.getItem('coutryNameShow') === 'yes'
+      : false
+  )
   const [currentRowClass, setCurrentRowClass] = useState('')
   const [isGameLost, setIsGameLost] = useState(false)
   const [isDarkMode, setIsDarkMode] = useState(
@@ -141,6 +148,15 @@ function App() {
     } else {
       showErrorAlert(HARD_MODE_ALERT_MESSAGE)
     }
+  }
+
+  const handleCountryName = (isCountryName: boolean) => {
+    // if (localStorage.getItem('coutryNameShow') === 'yes') {
+    setIsCountryName(isCountryName)
+    localStorage.setItem('coutryNameShow', isCountryName ? 'yes' : 'no')
+    // } else {
+    // showErrorAlert(COUNTRY_NAME_SHOW_ALERT_MESSAGE)
+    // }
   }
 
   const handleHighContrastMode = (isHighContrast: boolean) => {
@@ -260,6 +276,9 @@ function App() {
         setIsInfoModalOpen={setIsInfoModalOpen}
         setIsStatsModalOpen={setIsStatsModalOpen}
         setIsSettingsModalOpen={setIsSettingsModalOpen}
+        country={country}
+        numberOfGuessesMade={guesses.length}
+        isCountryName={isCountryName}
       />
       <div className="pt-2 px-1 pb-8 md:max-w-7xl w-full mx-auto sm:px-6 lg:px-8 flex flex-col grow">
         <div className="pb-6 grow">
@@ -314,6 +333,8 @@ function App() {
           handleDarkMode={handleDarkMode}
           isHighContrastMode={isHighContrastMode}
           handleHighContrastMode={handleHighContrastMode}
+          isCountryName={isCountryName}
+          handleCountryName={handleCountryName}
         />
         <AlertContainer />
         <footer className="flex justify-center items-center mt-8 mb-4">

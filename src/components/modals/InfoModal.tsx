@@ -10,8 +10,10 @@ export const InfoModal = ({ isOpen, handleClose }: Props) => {
   return (
     <BaseModal title="How to play" isOpen={isOpen} handleClose={handleClose}>
       <p className="text-sm text-gray-500 dark:text-gray-300">
-        Guess the city name in 6 tries. After each guess, the color of the tiles will
+        Guess the <b>city name</b> in <b>6</b> tries. After each guess, the color of the tiles will
         change to show how close your guess was to the city name.
+        Each day of the week city name legth is different - the <b>shortest </b>
+        on <b>Sunday</b> and the <b>longest</b> on <b>Saturday</b>.
       </p>
 
       <div className="flex justify-center mb-1 mt-4">

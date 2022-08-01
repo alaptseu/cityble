@@ -3,6 +3,7 @@ import { SettingsToggle } from './SettingsToggle'
 import {
   HARD_MODE_DESCRIPTION,
   HIGH_CONTRAST_MODE_DESCRIPTION,
+  SHOW_COUNTRY,
 } from '../../constants/strings'
 
 type Props = {
@@ -13,6 +14,8 @@ type Props = {
   isDarkMode: boolean
   handleDarkMode: Function
   isHighContrastMode: boolean
+  isCountryName: boolean
+  handleCountryName: Function
   handleHighContrastMode: Function
 }
 
@@ -25,6 +28,8 @@ export const SettingsModal = ({
   handleDarkMode,
   isHighContrastMode,
   handleHighContrastMode,
+  isCountryName,
+  handleCountryName,
 }: Props) => {
   return (
     <BaseModal title="Settings" isOpen={isOpen} handleClose={handleClose}>
@@ -45,6 +50,12 @@ export const SettingsModal = ({
           flag={isHighContrastMode}
           handleFlag={handleHighContrastMode}
           description={HIGH_CONTRAST_MODE_DESCRIPTION}
+        />
+        <SettingsToggle
+          settingName="Show coutry name"
+          flag={isCountryName}
+          handleFlag={handleCountryName}
+          description={SHOW_COUNTRY}
         />
       </div>
     </BaseModal>

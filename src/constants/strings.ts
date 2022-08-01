@@ -6,9 +6,12 @@ export const NOT_ENOUGH_LETTERS_MESSAGE = 'Not enough letters'
 export const WORD_NOT_FOUND_MESSAGE = 'City not found'
 export const HARD_MODE_ALERT_MESSAGE =
   'Hard Mode can only be enabled at the start!'
+export const COUNTRY_NAME_SHOW_ALERT_MESSAGE =
+  'Country name show can only be enabled at the start!'
 export const HARD_MODE_DESCRIPTION =
   'Any revealed hints must be used in subsequent guesses'
 export const HIGH_CONTRAST_MODE_DESCRIPTION = 'For improved color vision'
+export const SHOW_COUNTRY = 'Show country name to help guess the city'
 export const CORRECT_WORD_MESSAGE = (solution: string) =>
   `The word was ${solution}`
 export const WRONG_SPOT_MESSAGE = (guess: string, position: number) =>
