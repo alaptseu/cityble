@@ -1,5 +1,5 @@
-import { fail } from 'assert'
-import { filterByLength, citiesByLengthV2 } from './cities'
+// import { fail } from 'assert'
+import { citiesByLengthV2 } from './cities'
 
 describe('cityData', () => {
     test('words are unique', () => {
