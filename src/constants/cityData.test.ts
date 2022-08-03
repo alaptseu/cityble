@@ -1,5 +1,5 @@
 import { fail } from 'assert'
-import { filterByLength, citiesByLength } from './cities'
+import { filterByLength, citiesByLengthV2 } from './cities'
 
 describe('cityData', () => {
     test('words are unique', () => {
@@ -14,7 +14,7 @@ describe('cityData', () => {
 
         // cityByPopulationMap.get(5)?.forEach(entry => console.log('city: ' + entry));
         // console.log(citiesByPopulation(300000, 5));
-        const array = citiesByLength(5);
+        const array = citiesByLengthV2(5);
 
         console.log(array.length);
         // console.log(array);

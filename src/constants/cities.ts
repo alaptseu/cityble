@@ -1,4 +1,3 @@
-import { cityData } from './cityData'
 import { cityCountry } from './cityCountry'
 // import { CityCoutry } from './cityInfo'
 
@@ -59,54 +58,54 @@ export function countryByCity(city: string) {
     return cityCountry.filter((element) => element.city.toUpperCase() === city)[0].country;
 }
 
-export function citiesByDay(d: Date) {
-    const weekday = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+// export function citiesByDay(d: Date) {
+//     const weekday = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
 
-    let day = weekday[d.getDay()];
-    switch (day) {
-        case 'Sunday':
-            return citiesByLength(3)
-        case 'Monday':
-            return citiesByLength(4)
-        case 'Tuesday':
-            return citiesByLength(5)
-        case 'Wednesday':
-            return citiesByLength(6)
-        case 'Thursday':
-            return citiesByLength(7)
-        case 'Friday':
-            return citiesByLength(8)
-        case 'Saturday':
-            return citiesByLength(9)
-        default:
-            return citiesByLength(5)
-    }
-}
+//     let day = weekday[d.getDay()];
+//     switch (day) {
+//         case 'Sunday':
+//             return citiesByLength(3)
+//         case 'Monday':
+//             return citiesByLength(4)
+//         case 'Tuesday':
+//             return citiesByLength(5)
+//         case 'Wednesday':
+//             return citiesByLength(6)
+//         case 'Thursday':
+//             return citiesByLength(7)
+//         case 'Friday':
+//             return citiesByLength(8)
+//         case 'Saturday':
+//             return citiesByLength(9)
+//         default:
+//             return citiesByLength(5)
+//     }
+// }
 
-export function citiesByLength(nameLength: number) {
-    const cityMap = filterByLength(nameLength);
-    const citiesSet = cityMap.get(nameLength);
-    if (citiesSet) {
-        return Array.from(citiesSet);
-    } else {
-        return [];
-    }
-}
+// export function citiesByLength(nameLength: number) {
+//     const cityMap = filterByLength(nameLength);
+//     const citiesSet = cityMap.get(nameLength);
+//     if (citiesSet) {
+//         return Array.from(citiesSet);
+//     } else {
+//         return [];
+//     }
+// }
 
-export function filterByLength(min: number) {
-    const filteredCities = cityData.map(c => c.toLocaleLowerCase().replace(/\s/g, ''))
-        .filter((element) => element.length > 3);
+// export function filterByLength(min: number) {
+//     const filteredCities = cityData.map(c => c.toLocaleLowerCase().replace(/\s/g, ''))
+//         .filter((element) => element.length > 3);
 
-    const cityMap = new Map<number, Set<string>>();
-    filteredCities.forEach((city) => {
-        let citySet = cityMap.get(city.length)
-        if (!citySet) {
-            let set = new Set<string>()
-            set.add(city)
-            cityMap.set(city.length, set);
-        } else {
-            citySet.add(city)
-        }
-    })
-    return cityMap;
-};
+//     const cityMap = new Map<number, Set<string>>();
+//     filteredCities.forEach((city) => {
+//         let citySet = cityMap.get(city.length)
+//         if (!citySet) {
+//             let set = new Set<string>()
+//             set.add(city)
+//             cityMap.set(city.length, set);
+//         } else {
+//             citySet.add(city)
+//         }
+//     })
+//     return cityMap;
+// };
