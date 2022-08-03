@@ -2,7 +2,7 @@
 
 This is a clone project of the popular word guessing game we all know and love. Made using React, Typescript, and Tailwind.
 
-[**Try out the demo!**](https://cityble.onrender.com)
+[**Play here!**](https://cityble.quest/)
 
 ## Build and run
 
