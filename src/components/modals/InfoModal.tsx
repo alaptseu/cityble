@@ -58,6 +58,11 @@ export const InfoModal = ({ isOpen, handleClose }: Props) => {
       <p className="text-sm text-gray-500 dark:text-gray-300">
         The letter K is not in the city name in any spot.
       </p>
+      <div className="flex justify-center mb-1 mt-4">
+        <p className="text-sm text-gray-500 dark:text-gray-300">
+          Turn on <b>Show country name</b> in the settings to make it easier for you. Enjoy!
+        </p>
+      </div>
     </BaseModal>
   )
 }
