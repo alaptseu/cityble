@@ -55,7 +55,7 @@ export function filterByLengthV2(min: number) {
 };
 
 export function countryByCity(city: string) {
-    return cityCountry.filter((element) => element.city.toUpperCase() === city)[0].country;
+    return cityCountry.filter((element) => element.city.replace(/\s/g, '').toUpperCase() === city)[0].country;
 }
 
 // export function citiesByDay(d: Date) {
