@@ -30,7 +30,7 @@ export const Navbar = ({
           onClick={() => setIsInfoModalOpen(true)}
         />
         <p className="text-xl ml-2.5 font-bold dark:text-white">{GAME_TITLE}
-          {numberOfGuessesMade >= 1 && country && isCountryName &&
+          {country && isCountryName &&
             <p className="font-light">of {country}</p>}</p>
         <div className="right-icons">
           <ChartBarIcon

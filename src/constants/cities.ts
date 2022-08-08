@@ -37,7 +37,7 @@ export function citiesByLengthV2(nameLength: number) {
 }
 
 export function filterByLengthV2(min: number) {
-    const filteredCities = cityCountry.map(c => c.city.toLocaleLowerCase().replace(/\s/g, ''))
+    const filteredCities = cityCountry.map(c => toIgnore(c.city).toLocaleLowerCase())
         .filter((element) => element.length > 3);
 
     const cityMap = new Map<number, Set<string>>();
@@ -55,7 +55,11 @@ export function filterByLengthV2(min: number) {
 };
 
 export function countryByCity(city: string) {
-    return cityCountry.filter((element) => element.city.replace(/\s/g, '').toUpperCase() === city)[0].country;
+    return cityCountry.filter((element) => toIgnore(element.city).toUpperCase() === city)[0].country;
+}
+
+export function toIgnore(city: string) {
+    return city.replace(/-/g, '').replace(/\s/g, '');
 }
 
 // export function citiesByDay(d: Date) {
