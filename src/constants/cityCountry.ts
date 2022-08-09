@@ -4592,10 +4592,6 @@ export const cityCountry = [
       "country": "Lebanon"
     },
     {
-      "city": "Honcho",
-      "country": "Japan"
-    },
-    {
       "city": "Dusseldorf",
       "country": "Germany"
     },
@@ -16654,10 +16650,6 @@ export const cityCountry = [
     {
       "city": "Bonao",
       "country": "Dominican Republic"
-    },
-    {
-      "city": "Honcho",
-      "country": "Japan"
     },
     {
       "city": "Amherst",
